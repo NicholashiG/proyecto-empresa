@@ -6,7 +6,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "TIPO_EMPLEADO")
+@Table(name = "PAGO_CUOTA")
 @Getter
 @Setter
 @NoArgsConstructor
