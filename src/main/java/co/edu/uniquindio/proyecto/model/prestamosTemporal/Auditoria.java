@@ -27,7 +27,7 @@ public class Auditoria implements Serializable {
     private String hora;
 
     @Column(name = "ACCION", length = 110, nullable = false)
-    private String Accion;
+    private String accion;
 
     @ManyToOne
     @JoinColumn(name = "USUARIO_ID_USUARIO", nullable = false)
