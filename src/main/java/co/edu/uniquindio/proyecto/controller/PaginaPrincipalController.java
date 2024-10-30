@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.controller;
 
+import co.edu.uniquindio.proyecto.repositories.UsuarioRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,12 +8,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
 
 @Controller
 public class PaginaPrincipalController {
+
+    @Autowired
+    private UsuarioRepo usuarioRepo;
 
     @FXML
     private Button btnCerrarSesion;
@@ -35,9 +40,17 @@ public class PaginaPrincipalController {
     @FXML
     private Button btnUsuarios;
 
+
+    //Metodo que se ejecuta automáticamente al cargar la ventana
     @FXML
-    void cerrarSesion(ActionEvent event) {
-        cerrarVentana();
+    public void initialize() {
+        lblSaludo.setText("Bienvenido, " + UsuarioLogueadoGlobal.getUsuarioLogueado().getLogin());
+    }
+
+    @FXML
+    void cerrarSesion(ActionEvent event) throws IOException {
+        UsuarioLogueadoGlobal.setUsuarioLogueado(null);
+        nuevaVentana("inicioSesion.fxml");
     }
 
     @FXML
