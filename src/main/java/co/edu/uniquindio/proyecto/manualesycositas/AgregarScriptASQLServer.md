@@ -9,7 +9,7 @@ Para ejecutar el archivo `.sql` generado en SQL Server Management Studio (SSMS) 
 3. **Verificar la base de datos de destino**:
     - En la barra de herramientas, asegúrate de seleccionar la base de datos de destino en el menú desplegable. Si la base de datos aún no existe, puedes crearla rápidamente con el siguiente comando en una nueva consulta:
       ```sql
-      create database nombre_de_tu_base_de_datos;
+      create database PruebaSQL;
       ```
     - Selecciona la base de datos recién creada como destino en el menú desplegable de SSMS.
 
