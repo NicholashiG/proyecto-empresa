@@ -136,7 +136,12 @@ public class GestionUsuariosController {
 
     @FXML
     void select(MouseEvent event) {
-
+        // Obtener el usuario seleccionado
+        Usuario usuario = listViewUsuario.getSelectionModel().getSelectedItem();
+        //Mostrar la información del usuario
+        if (usuario != null) {
+            lblInfoUsuario.setText(usuario.toString());
+        }
     }
 
     private void nuevaVentana(String url) throws IOException {
