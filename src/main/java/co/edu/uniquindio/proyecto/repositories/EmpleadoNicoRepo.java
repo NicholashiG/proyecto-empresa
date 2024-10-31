@@ -22,5 +22,6 @@ public interface EmpleadoNicoRepo extends JpaRepository<EmpleadoNico, Integer> {
     // Encuentra empleados por sucursal
     List<EmpleadoNico> findBySucursal_IdSucursal(int idSucursal);
 
-
+    // Encuentra empleados por usuario
+    List<EmpleadoNico> findByUsuario_IdUsuario(int idUsuario);
 }

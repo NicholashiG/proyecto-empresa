@@ -1,6 +1,10 @@
 package co.edu.uniquindio.proyecto.controller;
 
 import co.edu.uniquindio.proyecto.ProyectoApplication;
+import co.edu.uniquindio.proyecto.model.NivelAcceso;
+import co.edu.uniquindio.proyecto.model.Usuario;
+import co.edu.uniquindio.proyecto.repositories.NivelAccesoRepo;
+import co.edu.uniquindio.proyecto.repositories.UsuarioRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
@@ -38,19 +43,34 @@ public class GestionUsuariosController {
     private Button btnNuevo;
 
     @FXML
-    private ChoiceBox<?> choiceNivelAcceso;
+    private ChoiceBox<NivelAcceso> choiceNivelAcceso;
 
     @FXML
     private Label lblInfoUsuario;
 
     @FXML
-    private ListView<?> listViewUsuario;
+    private ListView<Usuario> listViewUsuario;
 
     @FXML
     private TextField txtContrasenia;
 
     @FXML
     private TextField txtUsuario;
+
+    @Autowired
+    UsuarioRepo usuarioRepo;
+
+    @Autowired
+    NivelAccesoRepo nivelAccesoRepo;
+
+    @FXML
+    private void initialize() {
+        Usuario usuario = UsuarioLogueadoGlobal.getUsuarioLogueado();
+        // Inicializar la lista de usuarios
+        listViewUsuario.getItems().addAll(usuarioRepo.findAll());
+        // Inicializar la lista de niveles de acceso
+        choiceNivelAcceso.getItems().addAll(nivelAccesoRepo.findAll());
+    }
 
     @FXML
     void atras(ActionEvent event) throws IOException {
