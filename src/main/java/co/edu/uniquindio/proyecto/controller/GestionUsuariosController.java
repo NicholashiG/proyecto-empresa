@@ -79,27 +79,59 @@ public class GestionUsuariosController {
 
     @FXML
     void editar(ActionEvent event) {
-
+        // Obtener el usuario seleccionado
+        Usuario usuario = listViewUsuario.getSelectionModel().getSelectedItem();
+        if (usuario != null) {
+            // Mostrar la información del usuario
+            txtUsuario.setText(usuario.getLogin());
+            txtContrasenia.setText(usuario.getClave());
+            choiceNivelAcceso.setValue(usuario.getNivelAcceso());
+        }
     }
 
     @FXML
     void eliminar(ActionEvent event) {
-
+        // Obtener el usuario seleccionado
+        Usuario usuario = listViewUsuario.getSelectionModel().getSelectedItem();
+        if (usuario != null) {
+            // Eliminar el usuario
+            usuarioRepo.delete(usuario);
+            // Actualizar la lista de usuarios
+            listViewUsuario.getItems().clear();
+            listViewUsuario.getItems().addAll(usuarioRepo.findAll());
+        }
     }
 
     @FXML
     void guardarCambios(ActionEvent event) {
-
+        // Obtener el usuario seleccionado
+        Usuario usuario = listViewUsuario.getSelectionModel().getSelectedItem();
+        if (usuario != null) {
+            // Actualizar la información del usuario
+            usuario.setLogin(txtUsuario.getText());
+            usuario.setClave(txtContrasenia.getText());
+            usuario.setNivelAcceso(choiceNivelAcceso.getValue());
+            usuarioRepo.save(usuario);
+            // Actualizar la lista de usuarios
+            listViewUsuario.getItems().clear();
+            listViewUsuario.getItems().addAll(usuarioRepo.findAll());
+        }
     }
 
     @FXML
     void limpiar(ActionEvent event) {
-
+        txtUsuario.clear();
+        txtContrasenia.clear();
+        choiceNivelAcceso.setValue(null);
     }
 
     @FXML
     void nuevo(ActionEvent event) {
-
+        Usuario usuario = new Usuario();
+        usuario.setLogin(txtUsuario.getText());
+        usuario.setClave(txtContrasenia.getText());
+        usuario.setNivelAcceso(choiceNivelAcceso.getValue());
+        usuarioRepo.save(usuario);
     }
 
     @FXML
