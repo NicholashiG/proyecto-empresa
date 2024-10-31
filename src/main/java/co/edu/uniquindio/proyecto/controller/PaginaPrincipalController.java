@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.controller;
 
+import co.edu.uniquindio.proyecto.ProyectoApplication;
 import co.edu.uniquindio.proyecto.repositories.UsuarioRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +18,8 @@ import java.io.IOException;
 
 @Controller
 public class PaginaPrincipalController {
+
+    private static final Logger logger = LoggerFactory.getLogger(PaginaPrincipalController.class);
 
     @Autowired
     private UsuarioRepo usuarioRepo;
@@ -45,10 +50,25 @@ public class PaginaPrincipalController {
     @FXML
     public void initialize() {
         lblSaludo.setText("Bienvenido, " + UsuarioLogueadoGlobal.getUsuarioLogueado().getLogin());
+
+        if(UsuarioLogueadoGlobal.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")){
+            btnUsuarios.setVisible(true);
+            btnReportes.setVisible(true);
+        }
+        else if(UsuarioLogueadoGlobal.getUsuarioLogueado().getNivelAcceso().getNombre().equals("TESORERIA")){
+            btnUsuarios.setVisible(false);
+            btnReportes.setVisible(true);
+        }
+        else {
+            btnUsuarios.setVisible(false);
+            btnReportes.setVisible(false);
+        }
+
     }
 
     @FXML
     void cerrarSesion(ActionEvent event) throws IOException {
+        logger.info("Cerrando sesión para usuario: {}", UsuarioLogueadoGlobal.getUsuarioLogueado().getLogin());
         UsuarioLogueadoGlobal.setUsuarioLogueado(null);
         nuevaVentana("inicioSesion.fxml");
     }
@@ -80,10 +100,12 @@ public class PaginaPrincipalController {
 
     private void nuevaVentana(String url) throws IOException {
         // Cerrar la ventana actual
-        Stage stage = (Stage) btnSolicitudes.getScene().getWindow();
+        Stage stage = (Stage) btnCerrarSesion.getScene().getWindow();
         stage.close();
-        // Abre la nueva ventana
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/"+url));
+
+        // Abre la nueva ventana con el contexto de Spring
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + url));
+        fxmlLoader.setControllerFactory(ProyectoApplication.getSpringContext()::getBean);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();

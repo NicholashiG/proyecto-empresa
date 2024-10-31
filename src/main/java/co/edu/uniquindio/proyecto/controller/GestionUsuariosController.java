@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.controller;
 
+import co.edu.uniquindio.proyecto.ProyectoApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -90,8 +91,10 @@ public class GestionUsuariosController {
         // Cerrar la ventana actual
         Stage stage = (Stage) btnAtras.getScene().getWindow();
         stage.close();
-        // Abre la nueva ventana
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/"+url));
+
+        // Abre la nueva ventana con el contexto de Spring
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + url));
+        fxmlLoader.setControllerFactory(ProyectoApplication.getSpringContext()::getBean);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();

@@ -9,9 +9,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "co.edu.uniquindio.proyecto")
 public class ProyectoApplication extends Application {
-    private ConfigurableApplicationContext springContext;
+    private static ConfigurableApplicationContext springContext;
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -37,5 +37,9 @@ public class ProyectoApplication extends Application {
     @Override
     public void stop() throws Exception {
         springContext.close();
+    }
+
+    public static ConfigurableApplicationContext getSpringContext() {
+        return springContext;
     }
 }
