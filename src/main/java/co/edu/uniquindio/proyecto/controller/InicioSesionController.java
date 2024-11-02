@@ -63,7 +63,7 @@ public class InicioSesionController {
             // NOTA: Para el login y contraseña, usar admin y admin
 
             System.out.println("Inicio de sesión exitoso");
-            UsuarioLogueadoGlobal.setUsuarioLogueado(usuario.get());
+            VariablesGlobales.setUsuarioLogueado(usuario.get());
             nuevaVentana("paginaPrincipal.fxml");
         }
 

@@ -2,7 +2,7 @@ package co.edu.uniquindio.proyecto.controller;
 
 import co.edu.uniquindio.proyecto.model.Usuario;
 
-public class UsuarioLogueadoGlobal {
+public class VariablesGlobales {
 
     private static Usuario usuarioLogueado;
 
@@ -11,7 +11,7 @@ public class UsuarioLogueadoGlobal {
     }
 
     public static void setUsuarioLogueado(Usuario usuarioLogueado) {
-        UsuarioLogueadoGlobal.usuarioLogueado = usuarioLogueado;
+        VariablesGlobales.usuarioLogueado = usuarioLogueado;
     }
 
 }

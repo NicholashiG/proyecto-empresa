@@ -65,7 +65,7 @@ public class GestionUsuariosController {
 
     @FXML
     private void initialize() {
-        Usuario usuario = UsuarioLogueadoGlobal.getUsuarioLogueado();
+        Usuario usuario = VariablesGlobales.getUsuarioLogueado();
         // Inicializar la lista de usuarios
         listViewUsuario.getItems().addAll(usuarioRepo.findAll());
         // Inicializar la lista de niveles de acceso

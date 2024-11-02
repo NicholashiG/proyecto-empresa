@@ -5,7 +5,6 @@ import co.edu.uniquindio.proyecto.model.Solicitud;
 import co.edu.uniquindio.proyecto.model.Usuario;
 import co.edu.uniquindio.proyecto.repositories.EmpleadoNicoRepo;
 import co.edu.uniquindio.proyecto.repositories.SolicitudRepo;
-import co.edu.uniquindio.proyecto.repositories.UsuarioRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -67,7 +66,7 @@ public class GestionSolicitudesController {
 
     @FXML
     public void initialize () {
-        Usuario usuario = UsuarioLogueadoGlobal.getUsuarioLogueado();
+        Usuario usuario = VariablesGlobales.getUsuarioLogueado();
         // Inicializar la lista de solicitudes
         if (usuario.getNivelAcceso().getNombre().equals("PRINCIPAL")) {
             listViewSolicitudes.getItems().addAll(solicitudRepo.findAll());

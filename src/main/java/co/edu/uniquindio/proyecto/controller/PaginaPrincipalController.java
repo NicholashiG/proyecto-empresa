@@ -49,13 +49,13 @@ public class PaginaPrincipalController {
     //Metodo que se ejecuta automáticamente al cargar la ventana
     @FXML
     public void initialize() {
-        lblSaludo.setText("Bienvenido, " + UsuarioLogueadoGlobal.getUsuarioLogueado().getLogin());
+        lblSaludo.setText("Bienvenido, " + VariablesGlobales.getUsuarioLogueado().getLogin());
 
-        if(UsuarioLogueadoGlobal.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")){
+        if(VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")){
             btnUsuarios.setVisible(true);
             btnReportes.setVisible(true);
         }
-        else if(UsuarioLogueadoGlobal.getUsuarioLogueado().getNivelAcceso().getNombre().equals("TESORERIA")){
+        else if(VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("TESORERIA")){
             btnUsuarios.setVisible(false);
             btnReportes.setVisible(true);
         }
@@ -68,8 +68,8 @@ public class PaginaPrincipalController {
 
     @FXML
     void cerrarSesion(ActionEvent event) throws IOException {
-        logger.info("Cerrando sesión para usuario: {}", UsuarioLogueadoGlobal.getUsuarioLogueado().getLogin());
-        UsuarioLogueadoGlobal.setUsuarioLogueado(null);
+        logger.info("Cerrando sesión para usuario: {}", VariablesGlobales.getUsuarioLogueado().getLogin());
+        VariablesGlobales.setUsuarioLogueado(null);
         nuevaVentana("inicioSesion.fxml");
     }
 
