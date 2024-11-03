@@ -87,6 +87,17 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <Button fx:id="btnEmpleados" layoutX="91.0" layoutY="30.0" mnemonicParsing="false" onAction="#gestionarEmpleados" prefHeight="85.0" prefWidth="210.0" text="Gestión de Empleados">
+               <opaqueInsets>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
       <Button fx:id="btnCerrarSesion" layoutX="25.0" layoutY="411.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />

@@ -28,6 +28,9 @@ public class PaginaPrincipalController {
     private Button btnCerrarSesion;
 
     @FXML
+    private Button btnEmpleados;
+
+    @FXML
     private Label lblSaludo;
 
     @FXML
@@ -54,14 +57,17 @@ public class PaginaPrincipalController {
         if(VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")){
             btnUsuarios.setVisible(true);
             btnReportes.setVisible(true);
+            btnEmpleados.setVisible(true);
         }
         else if(VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("TESORERIA")){
             btnUsuarios.setVisible(false);
             btnReportes.setVisible(true);
+            btnEmpleados.setVisible(false);
         }
         else {
             btnUsuarios.setVisible(false);
             btnReportes.setVisible(false);
+            btnEmpleados.setVisible(false);
         }
 
     }
@@ -76,6 +82,11 @@ public class PaginaPrincipalController {
     @FXML
     void generarReportes(ActionEvent event) throws IOException {
         nuevaVentana("generacionReportes.fxml");
+    }
+
+    @FXML
+    void gestionarEmpleados(ActionEvent event) throws IOException {
+        nuevaVentana("gestionEmpleados.fxml");
     }
 
     @FXML
