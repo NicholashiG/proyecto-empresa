@@ -1,14 +1,20 @@
 package co.edu.uniquindio.proyecto.controller;
 
+import co.edu.uniquindio.proyecto.ProyectoApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import org.springframework.stereotype.Controller;
+
+import java.io.IOException;
 
 @Controller
 public class GestionEmpleadosController {
@@ -53,8 +59,8 @@ public class GestionEmpleadosController {
     private TextField txtNombre;
 
     @FXML
-    void atras(ActionEvent event) {
-
+    void atras(ActionEvent event) throws IOException {
+        nuevaVentana("paginaPrincipal.fxml");
     }
 
     @FXML
@@ -85,6 +91,19 @@ public class GestionEmpleadosController {
     @FXML
     void select(MouseEvent event) {
 
+    }
+
+    private void nuevaVentana(String url) throws IOException {
+        // Cerrar la ventana actual
+        Stage stage = (Stage) btnAtras.getScene().getWindow();
+        stage.close();
+
+        // Abre la nueva ventana con el contexto de Spring
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/" + url));
+        fxmlLoader.setControllerFactory(ProyectoApplication.getSpringContext()::getBean);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
