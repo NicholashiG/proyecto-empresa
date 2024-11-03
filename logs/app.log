@@ -1,52 +1,41 @@
-2024-10-30 20:20:01 - Intento de inicio de sesión con usuario: adm
-2024-10-30 20:20:01 - Usuario no encontrado: adm
-2024-10-30 20:20:09 - Intento de inicio de sesión con usuario: admin
-2024-10-30 20:20:09 - Contraseña incorrecta para usuario: admin
-2024-10-30 20:20:17 - Intento de inicio de sesión con usuario: admin
-2024-10-30 20:20:17 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 20:20:19 - Cerrando sesión para usuario: admin
-2024-10-30 20:32:55 - Intento de inicio de sesión con usuario: admin
-2024-10-30 20:32:55 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 20:32:58 - Cerrando sesión para usuario: admin
-2024-10-30 20:33:05 - Intento de inicio de sesión con usuario: tesoreria
-2024-10-30 20:33:23 - Intento de inicio de sesión con usuario: tesoreria
-2024-10-30 20:36:58 - Intento de inicio de sesión con usuario: admin
-2024-10-30 20:36:58 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 20:36:59 - Cerrando sesión para usuario: admin
-2024-10-30 20:37:08 - Intento de inicio de sesión con usuario: tesoreria
-2024-10-30 20:45:48 - Intento de inicio de sesión con usuario: admin
-2024-10-30 20:45:49 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 20:45:51 - Cerrando sesión para usuario: admin
-2024-10-30 20:45:59 - Intento de inicio de sesión con usuario: tesoreria
-2024-10-30 20:45:59 - Inicio de sesión exitoso para usuario: tesoreria
-2024-10-30 20:46:04 - Cerrando sesión para usuario: tesoreria
-2024-10-30 20:46:13 - Intento de inicio de sesión con usuario: empleado
-2024-10-30 20:46:13 - Inicio de sesión exitoso para usuario: empleado
-2024-10-30 20:46:17 - Cerrando sesión para usuario: empleado
-2024-10-30 21:10:13 - Intento de inicio de sesión con usuario: admin
-2024-10-30 21:10:13 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 21:13:11 - Intento de inicio de sesión con usuario: admin
-2024-10-30 21:13:12 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 21:14:58 - Intento de inicio de sesión con usuario: admin
-2024-10-30 21:14:58 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 21:50:22 - Intento de inicio de sesión con usuario: usuario1
-2024-10-30 21:55:32 - Intento de inicio de sesión con usuario: usuario1
-2024-10-30 21:55:32 - Inicio de sesión exitoso para usuario: usuario1
-2024-10-30 22:12:07 - Intento de inicio de sesión con usuario: admin
-2024-10-30 22:12:08 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 22:25:53 - Intento de inicio de sesión con usuario: admin
-2024-10-30 22:25:53 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 22:29:51 - Cerrando sesión para usuario: admin
-2024-10-30 22:32:41 - Intento de inicio de sesión con usuario: admin
-2024-10-30 22:32:42 - Inicio de sesión exitoso para usuario: admin
-2024-10-30 22:33:27 - Cerrando sesión para usuario: admin
-2024-11-02 23:04:35 - Intento de inicio de sesión con usuario: admin
-2024-11-02 23:04:36 - Inicio de sesión exitoso para usuario: admin
-2024-11-02 23:06:49 - Intento de inicio de sesión con usuario: admin
-2024-11-02 23:06:49 - Inicio de sesión exitoso para usuario: admin
-2024-11-02 23:07:05 - Cerrando sesión para usuario: admin
-2024-11-02 23:13:59 - Intento de inicio de sesión con usuario: admin
-2024-11-02 23:14:00 - Inicio de sesión exitoso para usuario: admin
-2024-11-02 23:15:07 - Cerrando sesión para usuario: admin
-2024-11-02 23:25:32 - Intento de inicio de sesión con usuario: admin
-2024-11-02 23:25:32 - Inicio de sesión exitoso para usuario: admin
+2024-11-03 09:26:02 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 09:26:03 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 09:29:31 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 09:29:31 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 09:31:58 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 09:31:58 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 09:33:09 - Cerrando sesión para usuario: empleado
+2024-11-03 09:59:37 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 09:59:37 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 10:04:28 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 10:04:29 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 10:06:54 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 10:06:54 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 10:08:12 - Cerrando sesión para usuario: empleado
+2024-11-03 10:08:17 - Intento de inicio de sesión con usuario: admin
+2024-11-03 10:08:17 - Inicio de sesión exitoso para usuario: admin
+2024-11-03 10:11:21 - Intento de inicio de sesión con usuario: admin
+2024-11-03 10:11:21 - Inicio de sesión exitoso para usuario: admin
+2024-11-03 10:13:27 - Cerrando sesión para usuario: admin
+2024-11-03 10:13:51 - Intento de inicio de sesión con usuario: usuario2
+2024-11-03 10:13:51 - Inicio de sesión exitoso para usuario: usuario2
+2024-11-03 10:14:40 - Intento de inicio de sesión con usuario: admin
+2024-11-03 10:14:40 - Inicio de sesión exitoso para usuario: admin
+2024-11-03 10:15:27 - Cerrando sesión para usuario: admin
+2024-11-03 10:15:36 - Intento de inicio de sesión con usuario: usuario2
+2024-11-03 10:15:36 - Inicio de sesión exitoso para usuario: usuario2
+2024-11-03 10:15:44 - Cerrando sesión para usuario: usuario2
+2024-11-03 10:30:51 - Intento de inicio de sesión con usuario: admin
+2024-11-03 10:30:51 - Inicio de sesión exitoso para usuario: admin
+2024-11-03 10:31:48 - Intento de inicio de sesión con usuario: admin
+2024-11-03 10:31:48 - Inicio de sesión exitoso para usuario: admin
+2024-11-03 10:32:10 - Cerrando sesión para usuario: admin
+2024-11-03 10:32:17 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 10:32:17 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 10:34:43 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 10:34:43 - Contraseña incorrecta para usuario: empleado
+2024-11-03 10:34:50 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 10:34:50 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 10:36:57 - Intento de inicio de sesión con usuario: empleado
+2024-11-03 10:36:57 - Inicio de sesión exitoso para usuario: empleado
+2024-11-03 10:37:24 - Cerrando sesión para usuario: empleado

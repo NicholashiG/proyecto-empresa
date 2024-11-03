@@ -51,6 +51,14 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
+                  <Label layoutX="10.0" layoutY="57.0" prefHeight="47.0" prefWidth="112.0" text="Estado:">
+                     <padding>
+                        <Insets bottom="13.0" left="20.0" right="13.0" top="13.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" prefHeight="95.0" prefWidth="264.0">
@@ -64,6 +72,11 @@
                      </VBox.margin>
                   </TextField>
                   <ChoiceBox fx:id="choiceMeses" prefHeight="31.0" prefWidth="250.0">
+                     <VBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="9.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceEstado" layoutX="17.0" layoutY="64.0" prefHeight="31.0" prefWidth="250.0">
                      <VBox.margin>
                         <Insets bottom="7.0" left="7.0" right="7.0" top="9.0" />
                      </VBox.margin>
