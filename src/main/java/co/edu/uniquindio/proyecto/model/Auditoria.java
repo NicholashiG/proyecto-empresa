@@ -12,12 +12,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class Auditoria implements Serializable {
 
     @Id
     @Column(name = "ID_AUDITORIA", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idAuditoria;
 
     @Column(name = "FECHA", length = 30, nullable = false)
@@ -26,6 +27,7 @@ public class Auditoria implements Serializable {
     @Column(name = "HORA", length = 30, nullable = false)
     private String hora;
 
+    @ToString.Include
     @Column(name = "ACCION", length = 110, nullable = false)
     private String accion;
 

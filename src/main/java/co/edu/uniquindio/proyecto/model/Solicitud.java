@@ -12,12 +12,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class Solicitud implements Serializable {
 
     @Id
     @Column(name = "ID_SOLICITUD", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idSolicitud;
 
     @Column(name = "FECHA", length = 20, nullable = false)
@@ -31,6 +32,7 @@ public class Solicitud implements Serializable {
     private float montoSolicitado;
 
     @Column(name = "ESTADO", length = 50, nullable = false)
+    @ToString.Include
     private String estado;
 
     @ManyToOne

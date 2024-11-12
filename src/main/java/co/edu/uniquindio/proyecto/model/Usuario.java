@@ -12,13 +12,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_USUARIO", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idUsuario;
 
     @ManyToOne
@@ -26,9 +27,11 @@ public class Usuario implements Serializable {
     private NivelAcceso nivelAcceso;
 
     @Column(name = "LOGIN", nullable = false)
+    @ToString.Include
     private String login;
 
     @Column(name = "CLAVE", nullable = false)
+    @ToString.Include
     private String clave;
 
 }

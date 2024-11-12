@@ -15,14 +15,16 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class NivelAcceso implements Serializable {
 
     @Id
     @Column(name = "ID_NIVEL", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idTipo;
 
+    @ToString.Include
     @Column(name = "NOMBRE", length = 30, nullable = false)
     private String nombre;
 

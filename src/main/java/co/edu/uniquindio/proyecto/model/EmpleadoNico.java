@@ -12,19 +12,21 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class EmpleadoNico implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_EMPLEADO", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idEmpleado;
 
     @OneToOne
     @JoinColumn(name = "USUARIO_ID_USUARIO", nullable = false)
     private Usuario usuario;
 
+    @ToString.Include
     @Column(name = "NOMBRE", nullable = false)
     private String nombre;
 

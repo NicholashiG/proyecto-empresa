@@ -12,12 +12,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class PagoCuota implements Serializable {
 
     @Id
     @Column(name = "ID_PAGO_CUOTA", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idPagoCuota;
 
     @ManyToOne

@@ -13,14 +13,16 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class Municipio implements Serializable {
 
     @Id
     @Column(name = "ID_MUNICIPIO", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idMunicipio;
 
+    @ToString.Include
     @Column(name = "NOMBRE", length = 30, nullable = false)
     private String nombre;
 

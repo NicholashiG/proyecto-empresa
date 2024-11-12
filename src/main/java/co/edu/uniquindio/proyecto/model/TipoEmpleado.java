@@ -15,15 +15,17 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 public class TipoEmpleado implements Serializable {
 
     @Id
     @Column(name = "ID_TIPO_EMPLEADO", nullable = false)
     @EqualsAndHashCode.Include
+    @ToString.Include
     private int idTipoEmpleado;
 
     @Column(name = "NOMBRE", length = 30, nullable = false)
+    @ToString.Include
     private String nombre;
 
     @Column(name = "PRESTAMO_MAXIMO", length = 30, nullable = false)
