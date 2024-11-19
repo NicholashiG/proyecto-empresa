@@ -132,6 +132,9 @@ public class GestionUsuariosController {
         usuario.setClave(txtContrasenia.getText());
         usuario.setNivelAcceso(choiceNivelAcceso.getValue());
         usuarioRepo.save(usuario);
+        listViewUsuario.getItems().clear();
+        listViewUsuario.getItems().addAll(usuarioRepo.findAll());
+        listViewUsuario.refresh();
     }
 
     @FXML

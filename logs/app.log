@@ -1,41 +1,43 @@
-2024-11-03 09:26:02 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 09:26:03 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 09:29:31 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 09:29:31 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 09:31:58 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 09:31:58 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 09:33:09 - Cerrando sesión para usuario: empleado
-2024-11-03 09:59:37 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 09:59:37 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 10:04:28 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 10:04:29 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 10:06:54 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 10:06:54 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 10:08:12 - Cerrando sesión para usuario: empleado
-2024-11-03 10:08:17 - Intento de inicio de sesión con usuario: admin
-2024-11-03 10:08:17 - Inicio de sesión exitoso para usuario: admin
-2024-11-03 10:11:21 - Intento de inicio de sesión con usuario: admin
-2024-11-03 10:11:21 - Inicio de sesión exitoso para usuario: admin
-2024-11-03 10:13:27 - Cerrando sesión para usuario: admin
-2024-11-03 10:13:51 - Intento de inicio de sesión con usuario: usuario2
-2024-11-03 10:13:51 - Inicio de sesión exitoso para usuario: usuario2
-2024-11-03 10:14:40 - Intento de inicio de sesión con usuario: admin
-2024-11-03 10:14:40 - Inicio de sesión exitoso para usuario: admin
-2024-11-03 10:15:27 - Cerrando sesión para usuario: admin
-2024-11-03 10:15:36 - Intento de inicio de sesión con usuario: usuario2
-2024-11-03 10:15:36 - Inicio de sesión exitoso para usuario: usuario2
-2024-11-03 10:15:44 - Cerrando sesión para usuario: usuario2
-2024-11-03 10:30:51 - Intento de inicio de sesión con usuario: admin
-2024-11-03 10:30:51 - Inicio de sesión exitoso para usuario: admin
-2024-11-03 10:31:48 - Intento de inicio de sesión con usuario: admin
-2024-11-03 10:31:48 - Inicio de sesión exitoso para usuario: admin
-2024-11-03 10:32:10 - Cerrando sesión para usuario: admin
-2024-11-03 10:32:17 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 10:32:17 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 10:34:43 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 10:34:43 - Contraseña incorrecta para usuario: empleado
-2024-11-03 10:34:50 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 10:34:50 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 10:36:57 - Intento de inicio de sesión con usuario: empleado
-2024-11-03 10:36:57 - Inicio de sesión exitoso para usuario: empleado
-2024-11-03 10:37:24 - Cerrando sesión para usuario: empleado
+2024-11-19 09:51:56 - Intento de inicio de sesión con usuario: karen
+2024-11-19 09:51:56 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 09:53:12 - Intento de inicio de sesión con usuario: karen
+2024-11-19 09:53:12 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 09:53:26 - Cerrando sesión para usuario: karen
+2024-11-19 09:53:29 - Intento de inicio de sesión con usuario: admin
+2024-11-19 09:53:29 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 09:53:41 - Cerrando sesión para usuario: admin
+2024-11-19 09:53:50 - Intento de inicio de sesión con usuario: karen
+2024-11-19 09:53:50 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:01:45 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:01:46 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:04:23 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:04:24 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:07:42 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:07:43 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:08:00 - Cerrando sesión para usuario: karen
+2024-11-19 10:08:05 - Intento de inicio de sesión con usuario: admin
+2024-11-19 10:08:05 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 10:08:19 - Cerrando sesión para usuario: admin
+2024-11-19 10:08:22 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:08:22 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:11:56 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:11:56 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:17:50 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:17:50 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:20:04 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:20:04 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:23:41 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:23:41 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:28:55 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:28:55 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:29:44 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:29:44 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:31:32 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:31:33 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:33:44 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:33:44 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:38:34 - Intento de inicio de sesión con usuario: karen
+2024-11-19 10:38:34 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 10:43:22 - Cerrando sesión para usuario: karen
+2024-11-19 10:43:26 - Intento de inicio de sesión con usuario: admin
+2024-11-19 10:43:26 - Inicio de sesión exitoso para usuario: admin
