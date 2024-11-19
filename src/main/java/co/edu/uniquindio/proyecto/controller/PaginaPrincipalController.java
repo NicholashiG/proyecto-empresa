@@ -118,7 +118,7 @@ public class PaginaPrincipalController {
         //stage.close();
 
         // Abre la nueva ventana con el contexto de Spring
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/menuAyuda"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/menuAyuda.fxml"));
         fxmlLoader.setControllerFactory(ProyectoApplication.getSpringContext()::getBean);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
