@@ -1,8 +1,10 @@
 package co.edu.uniquindio.proyecto.controller;
 
 import co.edu.uniquindio.proyecto.ProyectoApplication;
+import co.edu.uniquindio.proyecto.model.EstadoEmpleado;
 import co.edu.uniquindio.proyecto.model.PagoCuota;
 import co.edu.uniquindio.proyecto.model.Prestamo;
+import co.edu.uniquindio.proyecto.repositories.EstadoEmpleadoRepo;
 import co.edu.uniquindio.proyecto.repositories.PagoCuotaRepo;
 import co.edu.uniquindio.proyecto.repositories.PrestamoRepo;
 import javafx.event.ActionEvent;
@@ -15,6 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.Random;
 
@@ -43,6 +49,9 @@ public class PagoPrestamosController {
     private PagoCuotaRepo pagoCuotaRepo;
     @Autowired
     private PrestamoRepo prestamoRepo;
+
+    @Autowired
+    private EstadoEmpleadoRepo estadoEmpleadoRepo;
 
     @FXML
     void realizarPago() {
@@ -93,6 +102,40 @@ public class PagoPrestamosController {
             pagoCuota.setValorPago(Integer.parseInt(txtValorPago.getText()));
 
             pagoCuotaRepo.save(pagoCuota);
+
+
+
+            // Convertir la fecha del DatePicker al formato esperado
+            String fechaString = DatePicker.getValue().toString();
+            DateTimeFormatter datePickerFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate fechaPago = LocalDate.parse(fechaString, datePickerFormatter);
+
+            // Manejo de la fecha de desembolso
+            String fechaDesembolsoString = p.get().getFechaDesembolso();
+            DateTimeFormatter desembolsoFormatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+            LocalDate fechaDesembolso = LocalDate.parse(fechaDesembolsoString, desembolsoFormatter);
+
+            // Calcular la fecha límite
+            LocalDate fechaLimite = fechaDesembolso.plusMonths(1).withDayOfMonth(10);
+
+            // Actualizar estado del empleado
+            EstadoEmpleado estadoEmpleado = estadoEmpleadoRepo.findByIdEmpleado(p.get().getSolicitud().getEmpleado().getIdEmpleado())
+                    .orElse(new EstadoEmpleado());
+
+            estadoEmpleado.setIdEmpleado(p.get().getSolicitud().getEmpleado().getIdEmpleado());
+
+            System.out.println("Fecha del pago: " + fechaPago);
+            System.out.println("Fecha de desembolso: " + fechaDesembolso);
+
+            if (fechaPago.isAfter(fechaLimite)) {
+                estadoEmpleado.setEstado("MOROSO");
+            } else {
+                estadoEmpleado.setEstado("AL DÍA");
+            }
+            estadoEmpleado.setFechaActualizacion(Timestamp.valueOf(LocalDateTime.now()));
+
+            estadoEmpleadoRepo.save(estadoEmpleado);
+            System.out.println("Estado actualizado: " + estadoEmpleado.getEstado());
         }
     }
 

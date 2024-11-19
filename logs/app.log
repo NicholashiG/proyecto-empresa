@@ -41,3 +41,48 @@
 2024-11-19 10:43:22 - Cerrando sesión para usuario: karen
 2024-11-19 10:43:26 - Intento de inicio de sesión con usuario: admin
 2024-11-19 10:43:26 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 12:05:12 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:05:12 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:08:07 - Intento de inicio de sesión con usuario: import java.time.format.DateTimeFormatter;// Formato personalizado para fechas en formato "dd/MM/yy"DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");// Parsear la fecha del DatePickerLocalDate fechaPago = LocalDate.parse(DatePicker.getValue().toString(), formatter);// Convertir el String de fechaDesembolso a LocalDateLocalDate fechaDesembolso = LocalDate.parse(p.get().getFechaDesembolso(), formatter);// Calcular la fecha límiteLocalDate fechaLimite = fechaDesembolso.plusMonths(1).withDayOfMonth(10);
+2024-11-19 12:08:07 - Usuario no encontrado: import java.time.format.DateTimeFormatter;// Formato personalizado para fechas en formato "dd/MM/yy"DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");// Parsear la fecha del DatePickerLocalDate fechaPago = LocalDate.parse(DatePicker.getValue().toString(), formatter);// Convertir el String de fechaDesembolso a LocalDateLocalDate fechaDesembolso = LocalDate.parse(p.get().getFechaDesembolso(), formatter);// Calcular la fecha límiteLocalDate fechaLimite = fechaDesembolso.plusMonths(1).withDayOfMonth(10);
+2024-11-19 12:08:13 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:08:13 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:10:01 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:10:01 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:11:11 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:11:11 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:15:24 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:15:24 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:18:28 - Intento de inicio de sesión con usuario: // Manejo de la fecha de desembolso            String fechaDesembolsoString = p.get().getFechaDesembolso();            DateTimeFormatter desembolsoFormatter = DateTimeFormatter.ofPattern("dd/MM/yy");            LocalDate fechaDesembolso = LocalDate.parse(fechaDesembolsoString, desembolsoFormatter);            // Calcular la fecha límite            LocalDate fechaLimite = fechaDesembolso.plusMonths(1).withDayOfMonth(10);            // Actualizar estado del empleado            EstadoEmpleado estadoEmpleado = estadoEmpleadoRepo.findByIdEmpleado(p.get().getSolicitud().getEmpleado().getIdEmpleado())                    .orElse(new EstadoEmpleado());            estadoEmpleado.setIdEmpleado(p.get().getSolicitud().getEmpleado().getIdEmpleado());            System.out.println("Fecha del pago: " + fechaPago);            System.out.println("Fecha de desembolso: " + fechaDesembolso);            if (fechaPago.isAfter(fechaLimite)) {                estadoEmpleado.setEstado("MOROSO");            } else {                estadoEmpleado.setEstado("AL DÍA");            }            estadoEmpleado.setFechaActualizacion(Timestamp.valueOf(LocalDateTime.now()));            estadoEmpleadoRepo.save(estadoEmpleado);            System.out.println("Estado actualizado: " + estadoEmpleado.getEstado());
+2024-11-19 12:18:29 - Usuario no encontrado: // Manejo de la fecha de desembolso            String fechaDesembolsoString = p.get().getFechaDesembolso();            DateTimeFormatter desembolsoFormatter = DateTimeFormatter.ofPattern("dd/MM/yy");            LocalDate fechaDesembolso = LocalDate.parse(fechaDesembolsoString, desembolsoFormatter);            // Calcular la fecha límite            LocalDate fechaLimite = fechaDesembolso.plusMonths(1).withDayOfMonth(10);            // Actualizar estado del empleado            EstadoEmpleado estadoEmpleado = estadoEmpleadoRepo.findByIdEmpleado(p.get().getSolicitud().getEmpleado().getIdEmpleado())                    .orElse(new EstadoEmpleado());            estadoEmpleado.setIdEmpleado(p.get().getSolicitud().getEmpleado().getIdEmpleado());            System.out.println("Fecha del pago: " + fechaPago);            System.out.println("Fecha de desembolso: " + fechaDesembolso);            if (fechaPago.isAfter(fechaLimite)) {                estadoEmpleado.setEstado("MOROSO");            } else {                estadoEmpleado.setEstado("AL DÍA");            }            estadoEmpleado.setFechaActualizacion(Timestamp.valueOf(LocalDateTime.now()));            estadoEmpleadoRepo.save(estadoEmpleado);            System.out.println("Estado actualizado: " + estadoEmpleado.getEstado());
+2024-11-19 12:18:33 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:18:33 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:21:13 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:21:13 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:21:26 - Cerrando sesión para usuario: karen
+2024-11-19 12:21:31 - Intento de inicio de sesión con usuario: admin
+2024-11-19 12:21:31 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 12:21:40 - Cerrando sesión para usuario: admin
+2024-11-19 12:21:45 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:21:45 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:26:33 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:26:33 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:36:01 - Cerrando sesión para usuario: karen
+2024-11-19 12:36:08 - Intento de inicio de sesión con usuario: admin
+2024-11-19 12:36:08 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 12:41:46 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:41:47 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:44:44 - Cerrando sesión para usuario: karen
+2024-11-19 12:44:47 - Intento de inicio de sesión con usuario: admin
+2024-11-19 12:44:47 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 12:48:16 - Intento de inicio de sesión con usuario: karen
+2024-11-19 12:48:16 - Inicio de sesión exitoso para usuario: karen
+2024-11-19 12:48:41 - Cerrando sesión para usuario: karen
+2024-11-19 12:48:45 - Intento de inicio de sesión con usuario: admin
+2024-11-19 12:48:45 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 12:49:08 - Cerrando sesión para usuario: admin
+2024-11-19 12:49:14 - Intento de inicio de sesión con usuario: admin
+2024-11-19 12:49:14 - Inicio de sesión exitoso para usuario: admin
+2024-11-19 12:51:11 - Cerrando sesión para usuario: admin
+2024-11-19 12:51:19 - Intento de inicio de sesión con usuario: Manu Campos
+2024-11-19 12:51:19 - Inicio de sesión exitoso para usuario: Manu Campos

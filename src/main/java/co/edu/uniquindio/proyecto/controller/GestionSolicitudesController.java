@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyecto.controller;
 
 import co.edu.uniquindio.proyecto.ProyectoApplication;
+import co.edu.uniquindio.proyecto.model.EmpleadoNico;
 import co.edu.uniquindio.proyecto.model.Prestamo;
 import co.edu.uniquindio.proyecto.model.Solicitud;
 import co.edu.uniquindio.proyecto.model.Usuario;
@@ -12,11 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -187,23 +184,98 @@ public class GestionSolicitudesController {
         // Se asigna el monto solicitado
         // Todo: falta agregar validación para que el monto sea mayor a 0 y que el empleado pueda hacer una
         // Todo: solicitud de acuerdo a su tipo de empleado
-        solicitud.setMontoSolicitado(Float.parseFloat(txtMonto.getText()));
-        // Se asigna el estado de la solicitud en pendiente
-        solicitud.setEstado("PENDIENTE");
-        choiceEstado.setValue("PENDIENTE");
-        // Se asigna el periodo de la solicitud
-        // Por el momento solo sirve con 24 meses
-        solicitud.setPeriodoSolicitud(periodoSolicitudRepo.findByMeses(Integer.parseInt(choiceMeses.getValue())).get());
-        // Se guarda la solicitud
-        solicitudRepo.save(solicitud);
 
-        // Se actualiza la lista de solicitudes
-        listViewSolicitudes.getItems().clear();
-        if (VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")) {
-            listViewSolicitudes.getItems().addAll(solicitudRepo.findAll());
-        } else {
-            listViewSolicitudes.getItems().addAll(solicitudRepo.findByEmpleado_IdEmpleado((empleadoNicoRepo.findByUsuario_IdUsuario(VariablesGlobales.getUsuarioLogueado().getIdUsuario()).get(0).getIdEmpleado())));
+
+
+        float montoARevisar = Float.parseFloat(txtMonto.getText());
+
+        EmpleadoNico tipo = empleadoNicoRepo.findByUsuario_IdUsuario(VariablesGlobales.getUsuarioLogueado().getIdUsuario()).get(0);
+        System.out.println(tipo);
+        
+        if(tipo.getTipoEmpleado().getNombre().equals("operario") && montoARevisar <= 10000000 && montoARevisar > 0){
+            
+            
+            solicitud.setMontoSolicitado(Float.parseFloat(txtMonto.getText()));
+            // Se asigna el estado de la solicitud en pendiente
+            solicitud.setEstado("PENDIENTE");
+            choiceEstado.setValue("PENDIENTE");
+            // Se asigna el periodo de la solicitud
+            // Por el momento solo sirve con 24 meses
+            solicitud.setPeriodoSolicitud(periodoSolicitudRepo.findByMeses(Integer.parseInt(choiceMeses.getValue())).get());
+            // Se guarda la solicitud
+            solicitudRepo.save(solicitud);
+
+            // Se actualiza la lista de solicitudes
+            listViewSolicitudes.getItems().clear();
+            if (VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")) {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findAll());
+            } else {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findByEmpleado_IdEmpleado((empleadoNicoRepo.findByUsuario_IdUsuario(VariablesGlobales.getUsuarioLogueado().getIdUsuario()).get(0).getIdEmpleado())));
+            }
+            
+        }else if (tipo.getTipoEmpleado().getNombre().equals("administrativo") && montoARevisar <= 15000000 && montoARevisar > 0){
+            solicitud.setMontoSolicitado(Float.parseFloat(txtMonto.getText()));
+            // Se asigna el estado de la solicitud en pendiente
+            solicitud.setEstado("PENDIENTE");
+            choiceEstado.setValue("PENDIENTE");
+            // Se asigna el periodo de la solicitud
+            // Por el momento solo sirve con 24 meses
+            solicitud.setPeriodoSolicitud(periodoSolicitudRepo.findByMeses(Integer.parseInt(choiceMeses.getValue())).get());
+            // Se guarda la solicitud
+            solicitudRepo.save(solicitud);
+
+            // Se actualiza la lista de solicitudes
+            listViewSolicitudes.getItems().clear();
+            if (VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")) {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findAll());
+            } else {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findByEmpleado_IdEmpleado((empleadoNicoRepo.findByUsuario_IdUsuario(VariablesGlobales.getUsuarioLogueado().getIdUsuario()).get(0).getIdEmpleado())));
+            }
+        } else if (tipo.getTipoEmpleado().getNombre().equals("ejecutivo") && montoARevisar <= 20000000 && montoARevisar > 0) {
+            solicitud.setMontoSolicitado(Float.parseFloat(txtMonto.getText()));
+            // Se asigna el estado de la solicitud en pendiente
+            solicitud.setEstado("PENDIENTE");
+            choiceEstado.setValue("PENDIENTE");
+            // Se asigna el periodo de la solicitud
+            // Por el momento solo sirve con 24 meses
+            solicitud.setPeriodoSolicitud(periodoSolicitudRepo.findByMeses(Integer.parseInt(choiceMeses.getValue())).get());
+            // Se guarda la solicitud
+            solicitudRepo.save(solicitud);
+
+            // Se actualiza la lista de solicitudes
+            listViewSolicitudes.getItems().clear();
+            if (VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")) {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findAll());
+            } else {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findByEmpleado_IdEmpleado((empleadoNicoRepo.findByUsuario_IdUsuario(VariablesGlobales.getUsuarioLogueado().getIdUsuario()).get(0).getIdEmpleado())));
+            }
+        } else if (tipo.getTipoEmpleado().getNombre().equals("otros") && montoARevisar <= 12000000 && montoARevisar > 0) {
+            solicitud.setMontoSolicitado(Float.parseFloat(txtMonto.getText()));
+            // Se asigna el estado de la solicitud en pendiente
+            solicitud.setEstado("PENDIENTE");
+            choiceEstado.setValue("PENDIENTE");
+            // Se asigna el periodo de la solicitud
+            // Por el momento solo sirve con 24 meses
+            solicitud.setPeriodoSolicitud(periodoSolicitudRepo.findByMeses(Integer.parseInt(choiceMeses.getValue())).get());
+            // Se guarda la solicitud
+            solicitudRepo.save(solicitud);
+
+            // Se actualiza la lista de solicitudes
+            listViewSolicitudes.getItems().clear();
+            if (VariablesGlobales.getUsuarioLogueado().getNivelAcceso().getNombre().equals("PRINCIPAL")) {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findAll());
+            } else {
+                listViewSolicitudes.getItems().addAll(solicitudRepo.findByEmpleado_IdEmpleado((empleadoNicoRepo.findByUsuario_IdUsuario(VariablesGlobales.getUsuarioLogueado().getIdUsuario()).get(0).getIdEmpleado())));
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Atención");
+            alert.setHeaderText(null);
+            alert.setContentText("El valor ingresado no coincide con el tipo de empleado que usted es.");
+            alert.showAndWait();
         }
+
+
     }
 
     @FXML
