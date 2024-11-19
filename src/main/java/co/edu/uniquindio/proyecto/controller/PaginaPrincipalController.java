@@ -114,7 +114,15 @@ public class PaginaPrincipalController {
 
     @FXML
     void abrirAyuda(ActionEvent event) throws IOException {
-        nuevaVentana("menuAyuda.fxml");
+        Stage stage = (Stage) btnCerrarSesion.getScene().getWindow();
+        //stage.close();
+
+        // Abre la nueva ventana con el contexto de Spring
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/menuAyuda"));
+        fxmlLoader.setControllerFactory(ProyectoApplication.getSpringContext()::getBean);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
     }
 
     private void nuevaVentana(String url) throws IOException {
