@@ -25,6 +25,9 @@ public class PaginaPrincipalController {
     private UsuarioRepo usuarioRepo;
 
     @FXML
+    private Button btnAyuda;
+
+    @FXML
     private Button btnCerrarSesion;
 
     @FXML
@@ -107,6 +110,11 @@ public class PaginaPrincipalController {
     @FXML
     void gestionarUsuarios(ActionEvent event) throws IOException {
         nuevaVentana("gestionUsuarios.fxml");
+    }
+
+    @FXML
+    void abrirAyuda(ActionEvent event) throws IOException {
+        nuevaVentana("menuAyuda.fxml");
     }
 
     private void nuevaVentana(String url) throws IOException {
