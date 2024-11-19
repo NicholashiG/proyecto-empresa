@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyecto.controller;
 
 import co.edu.uniquindio.proyecto.ProyectoApplication;
+import co.edu.uniquindio.proyecto.model.PagoCuota;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +28,7 @@ public class GestionCuotasController {
     private Label lblInfoCuota;
 
     @FXML
-    private ListView<?> listViewCuotas;
+    private ListView<PagoCuota> listViewCuotas;
 
     @FXML
     void atras(ActionEvent event) throws IOException {

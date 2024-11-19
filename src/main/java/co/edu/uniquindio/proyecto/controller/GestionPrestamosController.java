@@ -27,6 +27,9 @@ import java.util.ArrayList;
 public class GestionPrestamosController {
 
     @FXML
+    private Button btnAyuda;
+
+    @FXML
     private Button btnAtras;
 
     @FXML
@@ -79,6 +82,11 @@ public class GestionPrestamosController {
     @FXML
     void atras(ActionEvent event) throws IOException {
         nuevaVentana("paginaPrincipal.fxml");
+    }
+
+    @FXML
+    void ayuda(ActionEvent event) throws IOException{
+        
     }
 
     @FXML

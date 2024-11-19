@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Morosos" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="50" bottomMargin="50">
+    <parameter name="FechaCorte" class="java.util.Date"/>
+    <queryString>
+        <![CDATA[
+        SELECT 
+    e.id_empleado AS Empleado,
+    s.nombre AS Sucursal,
+    l.saldo AS DeudaPendiente,
+    COUNT(p.id_pago_cuota) AS CuotasPendientes
+FROM empleado_nico e
+JOIN sucursal s ON e.sucursal_id_sucursal = s.id_sucursal
+JOIN solicitud sol ON e.id_empleado = sol.empleado_id_empleado
+JOIN prestamo l ON sol.id_solicitud = l.solicitud_id_solicitud
+LEFT JOIN pago_cuota p ON l.id_prestamo = p.prestamo_id_prestamo
+WHERE p.fecha_pago IS NULL OR p.fecha_pago > DATEADD(DAY, 10, l.fecha_desembolso)
+GROUP BY e.id_empleado, s.nombre, l.saldo
+HAVING l.saldo > 0;
+
+
+        ]]>
+    </queryString>
+    <field name="Empleado" class="java.lang.String"/>
+    <field name="Sucursal" class="java.lang.String"/>
+    <field name="DeudaPendiente" class="java.lang.Double"/>
+    <field name="CuotasPendientes" class="java.lang.Integer"/>
+    <title>
+        <band height="50">
+            <textField>
+                <reportElement x="0" y="0" width="515" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Reporte de Morosos al día de hoy "]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Empleado]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="150" y="0" width="150" height="20"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Sucursal]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="300" y="0" width="150" height="20"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Deuda Pendiente]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="450" y="0" width="65" height="20"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Cuotas Pendientes]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{Empleado}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="150" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{Sucursal}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="300" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{DeudaPendiente}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="450" y="0" width="65" height="20"/>
+                <textFieldExpression><![CDATA[$F{CuotasPendientes}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
