@@ -9,6 +9,7 @@ import java.util.Optional;
 @Repository
 public interface PrestamoRepo extends JpaRepository<Prestamo, Integer> {
 
+    Optional<Prestamo> findPrestamoByIdPrestamo(int idPrestamo);
     // Encuentra un préstamo por la solicitud asociada
     Optional<Prestamo> findBySolicitud_IdSolicitud(int idSolicitud);
 
